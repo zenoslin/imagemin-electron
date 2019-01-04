@@ -1,5 +1,5 @@
 const {ipcRenderer} = require('electron')
-const fileList = require('./src/tinyPNG')
+const tiny = require('./src/tinyPNG')
 
 const selectDirBtn = document.getElementById('select-directory')
 const tinyBtn = document.getElementById('tiny-btn');
@@ -18,5 +18,5 @@ ipcRenderer.on('selected-directory', (event, path) => {
 })
 
 tinyBtn.addEventListener('click', (event) => {
-    fileList(uiPath + '/') 
+    tiny(uiPath + '/') 
 })

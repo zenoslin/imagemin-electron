@@ -23,7 +23,7 @@ const options = {
 };
 
 // 获取文件列表
-function fileList(folder) {
+function tiny(folder) {
   fs.readdir(folder, (err, files) => {
     if (err) console.error(err);
     files.forEach(file => {
@@ -44,7 +44,7 @@ function fileFilter(file) {
     ) {
       fileUpload(file); // console.log('可以压缩：' + file);
     }
-    if (stats.isDirectory()) fileList(file + '/');
+    if (stats.isDirectory()) tiny(file + '/');
   });
 }
 // 异步API,压缩图片
@@ -95,4 +95,4 @@ function fileUpdate(imgpath, obj) {
   req.end();
 }
 
-module.exports = fileList
+module.exports = tiny
