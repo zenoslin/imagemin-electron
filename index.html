@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>tinyPNG-electron</title>
+</head>
+
+<body>
+    <h1>tinyPNG-electron</h1>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    <button id="select-directory">选择路径</button>
+    <span id="selected-file">默认选择./ui</span>
+    <button id="tiny-btn">开始压缩</button>
+
+    <script>
+        // You can also require other files to run in this process
+        require('./renderer.js')
+    </script>
+</body>
+
+</html>
