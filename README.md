@@ -1,6 +1,6 @@
-# tinyPNG-electron
+# imagemin-electron
 
-electron + node.js + tinyPNG.com
+electron + node.js
 
 ## How to start
 
@@ -12,7 +12,5 @@ npm run start
 
 ## Todo
 
-- [ ] log print
 - [ ] UI
-- [ ] tinyPNG api
 - [ ] one file drop to tiny
