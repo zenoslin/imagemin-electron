@@ -3,9 +3,10 @@ const imagemin = require('./src/imagemin').compass;
 // const tiny = require('./src/tinyPNG')
 
 const selectDirBtn = document.getElementById('select-directory')
-const tinyBtn = document.getElementById('tiny-btn');
+const tinyBtn = document.getElementById('tiny-btn')
+const inputPath = document.getElementById('selected-file')
 
-var uiPath = './ui'
+var _inputPath = './ui'
 
 selectDirBtn.addEventListener('click', (event) => {
     console.log('点击按钮')
@@ -14,11 +15,12 @@ selectDirBtn.addEventListener('click', (event) => {
 
 ipcRenderer.on('selected-directory', (event, path) => {
     console.log(`收到完成信息 ${path}`)
-    uiPath = path
-    document.getElementById('selected-file').value = `${path}`
+    _inputPath = path
+    inputPath.value = `${path}`
 })
 
 tinyBtn.addEventListener('click', (event) => {
-    imagemin(uiPath, uiPath + "/temp"); 
+    _inputPath = inputPath.value;
+    imagemin(_inputPath, _inputPath + "/temp"); 
     console.log('压缩完成')
 })
