@@ -1,5 +1,6 @@
 const {ipcRenderer} = require('electron')
-const tiny = require('./src/tinyPNG')
+const imagemin = require('./src/imagemin').compass;
+// const tiny = require('./src/tinyPNG')
 
 const selectDirBtn = document.getElementById('select-directory')
 const tinyBtn = document.getElementById('tiny-btn');
@@ -14,9 +15,10 @@ selectDirBtn.addEventListener('click', (event) => {
 ipcRenderer.on('selected-directory', (event, path) => {
     console.log(`收到完成信息 ${path}`)
     uiPath = path
-    document.getElementById('selected-file').innerHTML = `你已选择: ${path}`
+    document.getElementById('selected-file').value = `${path}`
 })
 
 tinyBtn.addEventListener('click', (event) => {
-    tiny(uiPath + '/') 
+    imagemin(uiPath, uiPath + "/temp"); 
+    console.log('压缩完成')
 })

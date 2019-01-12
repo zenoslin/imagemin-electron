@@ -1,22 +1,38 @@
-const gulp = require('gulp');
-const imagemin = require('gulp-imagemin');
- 
-gulp.task('imgmin', function () {
-    var jpgmin = imageminJpegRecompress({
-            accurate: true,//高精度模式
-            quality: "high",//图像质量:low, medium, high and veryhigh;
-            method: "smallfry",//网格优化:mpe, ssim, ms-ssim and smallfry;
-            min: 70,//最低质量
-            loops: 0,//循环尝试次数, 默认为6;
-            progressive: false,//基线优化
-            subsample: "default"//子采样:default, disable;
-        }),
-        pngmin = imageminOptipng({
-            optimizationLevel: 4
+const imagemin = require('imagemin')
+const imageminMozjpeg = require('imagemin-mozjpeg')
+const imageminPngquant = require('imagemin-pngquant')
+const imageminGifsicle = require('imagemin-gifsicle')
+
+async function compass(input, output) {
+    return await imageminCompass(input, output);
+}
+
+async function imageminCompass(input, output = 'temp') {
+    input = (typeof input == 'string') ? [input] : input;
+    return await imagemin(input, output, {
+            use: [
+                imageminMozjpeg(),
+                imageminPngquant(),
+                imageminGifsicle({
+                    optimizationLevel:3
+                })
+            ]
+        })
+        .then(file => {
+            return {
+                status: true,
+                data: file
+            };
+        })
+        .catch(e => {
+            console.log(e);
+            return {
+                status: false,
+                error: e.toString()
+            }
         });
-    gulp.src("../ui/*.*")
-        .pipe(imagemin({
-            use: [jpgmin, pngmin]
-        }))
-        .pipe(gulp.dest("dist/img"));
-});
+}
+
+module.exports = {
+    compass: compass
+};

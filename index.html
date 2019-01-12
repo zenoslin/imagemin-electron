@@ -1,22 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
-    <title>tinyPNG-electron</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Imagemin Electron</title>
+
+    <link href="./css/bootstrap.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>tinyPNG-electron</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    <button id="select-directory">选择路径</button>
-    <span id="selected-file">默认选择./ui</span>
-    <button id="tiny-btn">开始压缩</button>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Imagemin Electron</h1>
+            <p>To tiny your PNG JPG and Gif</p>
+            <p>
+                <button class="btn btn-lg btn-primary" id="select-directory">选择路径</button>
+                <input id="selected-file" value="./ui"></span>
+            </p>
+            <p>
+                <button class="btn btn-lg btn-primary" id="tiny-btn">开始压缩</button>  
+            </p>
+        </div>
 
-    <script>
-        // You can also require other files to run in this process
-        require('./renderer.js')
-    </script>
+        <!-- <script src="./src/jquery-3.3.1.js"></script> -->
+        <script src="./src/bootstrap.js"></script>
+        <script>
+            // You can also require other files to run in this process
+            require('./renderer.js')
+        </script>
 </body>
 
 </html>

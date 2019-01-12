@@ -17,9 +17,9 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^3.0.7",
-    "gulp": "^4.0.0",
-    "gulp-imagemin": "^5.0.3",
-    "imagemin": "^6.1.0"
+    "imagemin": "^6.1.0",
+    "imagemin-gifsicle": "^5.2.0",
+    "imagemin-mozjpeg": "6.0.0",
+    "imagemin-pngquant": "5.0.0"
   }
 }
