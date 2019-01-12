@@ -1,10 +1,11 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "imagemin-electron",
+  "version": "0.1.0",
+  "description": "A compress application for PNG JPG GIF",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "packagerMac": "electron-packager ./ --platform=mas --arch=x64"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -14,9 +15,11 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "zenoslin",
   "license": "CC0-1.0",
   "devDependencies": {
+    "electron": "^4.0.1",
+    "electron-packager": "^13.0.1",
     "imagemin": "^6.1.0",
     "imagemin-gifsicle": "^5.2.0",
     "imagemin-mozjpeg": "6.0.0",

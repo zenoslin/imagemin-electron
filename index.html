@@ -15,18 +15,25 @@
     <div class="container">
         <div class="jumbotron">
             <h1>Imagemin Electron</h1>
-            <p>To tiny your PNG JPG and Gif</p>
+            <p>to tiny your PNG JPG and Gif</p>
             <p>
-                <button class="btn btn-lg btn-primary" id="select-directory">选择路径</button>
-                <input id="selected-file" value="./ui"></span>
+                <button class="btn btn-lg btn-primary" id="input-btn">选择路径</button>
+                <input id="input-path" value="./ui"></input>
             </p>
             <p>
-                <button class="btn btn-lg btn-primary" id="tiny-btn">开始压缩</button>  
+                <button class="btn btn-lg btn-primary" id="output-btn">输出路径</button>
+                <input id="output-path" value="./ui/temp"></input>
+            </p>
+            <p>
+                <button class="btn btn-lg btn-primary" id="tiny-btn">开始压缩</button>
+                <span id="log-span">点击开始</span>
             </p>
         </div>
 
-        <!-- <script src="./src/jquery-3.3.1.js"></script> -->
-        <script src="./src/bootstrap.js"></script>
+        <script>
+            require('./src/jquery.min.js')
+            require('./src/bootstrap.min.js')
+        </script>
         <script>
             // You can also require other files to run in this process
             require('./renderer.js')
