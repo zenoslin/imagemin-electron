@@ -2,7 +2,8 @@
 
 [![GitHub release](https://img.shields.io/badge/release-v0.0.1-blue.svg)](https://github.com/zenoslin/imagemin-electron/releases)
 
-electron + node.js
+A imagemin tools build by `electron` + `node.js`.
+Support compress`PNG` `JPG`and`GIF`.
 
 ## How to start
 
