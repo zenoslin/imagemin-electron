@@ -1,4 +1,4 @@
-# imagemin-electron
+# imagemin-electron [![GitHub release](https://github.com/zenoslin/imagemin-electron/releases)]
 
 electron + node.js
 
