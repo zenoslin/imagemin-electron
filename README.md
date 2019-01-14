@@ -1,4 +1,6 @@
-# imagemin-electron [![GitHub release](https://github.com/zenoslin/imagemin-electron/releases)]
+# imagemin-electron
+
+[![GitHub release](https://img.shields.io/badge/release-v0.0.1-blue.svg)](https://github.com/zenoslin/imagemin-electron/releases)
 
 electron + node.js
 
