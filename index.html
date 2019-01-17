@@ -9,20 +9,37 @@
     <title>Imagemin Electron</title>
 
     <link href="./src/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* 拖拽的区域样式 */
+        .holder {
+            min-height: 200px;
+            background: #eee;
+            margin: 2em;
+            padding: 1em;
+            border: 0px dotted #eee;
+            border-radius: 10px;
+            transition: .3s all ease-in-out;
+        }
+
+        /* 拖拽时用jQuery为其添加边框样式的class */
+        .holder-ondrag {
+            border: 20px dotted #d45700;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="jumbotron">
+        <div id="holder" class="jumbotron holder">
             <h1>Imagemin Electron</h1>
             <p>to tiny your PNG JPG and Gif</p>
             <p>
                 <button class="btn btn-lg btn-primary" id="input-btn">选择路径</button>
-                <input id="input-path" value="./ui"></input>
+                <input id="input-path" value=" " style="width:560px"></input>
             </p>
             <p>
                 <button class="btn btn-lg btn-primary" id="output-btn">输出路径</button>
-                <input id="output-path" value="./ui/temp"></input>
+                <input id="output-path" value=" " style="width:560px"></input>
             </p>
             <p>
                 <button class="btn btn-lg btn-primary" id="tiny-btn">开始压缩</button>

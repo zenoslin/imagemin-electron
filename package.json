@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "packagerMac": "electron-packager ./ --platform=mas --arch=x64",
-    "packagerWin": "electron-packager . imagemin --platform=win32 --arch=x64 --out=out --asar"
+    "packagerMac": "electron-packager . --out=out --platform=mas --arch=x64",
+    "packagerWin": "electron-packager . --platform=win32 --arch=x64 --asar"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
