@@ -3,16 +3,17 @@ const imageminMozjpeg = require('imagemin-mozjpeg')
 const imageminPngquant = require('imagemin-pngquant')
 const imageminGifsicle = require('imagemin-gifsicle')
 
-async function compass(input, output) {
-    return await imageminCompass(input, output);
+async function compass(input, output, opts, callback) {
+    let log = await imageminCompass(input, output, opts)
+    callback(log)
 }
 
-async function imageminCompass(input, output = 'temp') {
+async function imageminCompass(input, output = 'temp', opts = {}) {
     input = (typeof input == 'string') ? [input] : input;
     return await imagemin(input, output, {
             use: [
-                imageminMozjpeg(),
-                imageminPngquant(),
+                imageminMozjpeg(opts),
+                imageminPngquant(opts),
                 imageminGifsicle({
                     optimizationLevel:3
                 })

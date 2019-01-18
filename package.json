@@ -5,8 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "packagerMac": "electron-packager . --out=out --platform=mas --arch=x64",
-    "packagerWin": "electron-packager . --platform=win32 --arch=x64 --asar"
+    "packMac": "electron-packager . --out=out --platform=mas --arch=x64",
+    "packWin": "electron-packager . --platform=win32 --arch=x64",
+    "package:mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --out=out --icon=assets/app-icon/mac/app.icns --osx-sign.identity='Developer ID Application: GitHub' --extend-info=assets/mac/info.plist",
+    "package:win": "electron-packager . --overwrite --platform=win32 --arch=ia32 --out=out --icon=assets/app-icon/win/app.ico"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -18,6 +20,13 @@
   ],
   "author": "zenoslin",
   "license": "CC0-1.0",
+  "dependencies": {
+    "electron": "^4.0.1",
+    "imagemin": "^6.1.0",
+    "imagemin-gifsicle": "^5.2.0",
+    "imagemin-mozjpeg": "6.0.0",
+    "imagemin-pngquant": "5.0.0"
+  },
   "devDependencies": {
     "electron": "^4.0.1",
     "electron-packager": "^13.0.1",

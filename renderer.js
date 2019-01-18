@@ -1,19 +1,21 @@
 const {ipcRenderer} = require('electron')
 const imagemin = require('./src/imagemin').compass;
-// const tiny = require('./src/tinyPNG')
 
 const inputBtn = document.getElementById('input-btn')
 const outputBtn = document.getElementById('output-btn')
 const inputPath = document.getElementById('input-path')
 const outputPath = document.getElementById('output-path')
 const tinyBtn = document.getElementById('tiny-btn')
-const logSpan = document.getElementById('log-span')
+const tinySpan = document.getElementById('tiny-span')
+const compassInput = document.getElementById('compression')
 
-var _inputPath = './ui'
-var _outputPath = "./ui/temp"
+let _inputPath = '/Users/linze/Documents'
+let _outputPath = '/Users/linze/Downloads'
+let _opts = {quality: 95}
 
 inputPath.value = _inputPath
 outputPath.value = _outputPath
+compassInput.value = _opts.quality
 
 inputBtn.addEventListener('click', (event) => {
     console.log('点击输入按钮')
@@ -38,10 +40,14 @@ ipcRenderer.on('output-path', (event, path) => {
 })
 
 tinyBtn.addEventListener('click', (event) => {
+    tinySpan.innerHTML = "开始压缩"
     _inputPath = inputPath.value
     _outputPath = outputPath.value
-    imagemin(_inputPath, _outputPath)
-    logSpan.innerHTML = "压缩完成"
+    _opts.quality = compassInput.value
+    imagemin(_inputPath, _outputPath, _opts, (log) => {
+        console.log(log)
+        tinySpan.innerHTML = "压缩完成"
+    })
 })
 
 //Js拖入文件

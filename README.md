@@ -16,5 +16,5 @@ npm run start
 
 ## Todo
 
+- [x] one file drop to tiny
 - [ ] UI
-- [ ] one file drop to tiny
