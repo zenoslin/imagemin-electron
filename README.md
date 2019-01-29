@@ -4,7 +4,7 @@
 
 用`electron`和`node.js`写的一个压缩图片桌面应用，支持`PNG` `JPG`和`GIF`。
 
-开发思路 -> [传送门🚪](http://www.zenoslin.top/index.php/2019/01/28/imagemin/)
+开发思路 -> [传送门🚪](http://www.zenoslin.top/index.php/2019/01/28/imagemin/)
 
 ## How to start
 
