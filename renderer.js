@@ -9,8 +9,8 @@ const tinyBtn = document.getElementById('tiny-btn')
 const tinySpan = document.getElementById('tiny-span')
 const compassInput = document.getElementById('compression')
 
-let _inputPath = '/Users/linze/Documents'
-let _outputPath = '/Users/linze/Downloads'
+let _inputPath = '/Users/zenoslin/Documents'
+let _outputPath = '/Users/zenoslin/Downloads'
 let _opts = {quality: 95}
 
 inputPath.value = _inputPath

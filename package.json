@@ -22,17 +22,12 @@
   "license": "CC0-1.0",
   "dependencies": {
     "electron": "^4.0.1",
-    "imagemin": "^6.1.0",
-    "imagemin-gifsicle": "^5.2.0",
-    "imagemin-mozjpeg": "6.0.0",
-    "imagemin-pngquant": "5.0.0"
+    "imagemin": "^7.0.1",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0"
   },
   "devDependencies": {
-    "electron": "^4.0.1",
-    "electron-packager": "^13.0.1",
-    "imagemin": "^6.1.0",
-    "imagemin-gifsicle": "^5.2.0",
-    "imagemin-mozjpeg": "6.0.0",
-    "imagemin-pngquant": "5.0.0"
+    "electron-packager": "^13.0.1"
   }
 }
